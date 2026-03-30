@@ -6,6 +6,7 @@ import { Dock, DockIcon } from './ui/dock';
 import { Home } from 'lucide-react';
 import Link from 'next/link';
 import { Separator } from './ui/separator';
+import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler';
 
 export default function Navbar() {
     return (
@@ -18,7 +19,7 @@ export default function Navbar() {
                 </DockIcon>
                 <Separator orientation="vertical" />
                 <DockIcon>
-                    <ModeToggle />
+                    <AnimatedThemeToggler />
                 </DockIcon>
             </Dock>
         </div>

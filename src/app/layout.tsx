@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import { JetBrains_Mono  } from 'next/font/google';
+import { JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import { ToastContainer } from 'react-toastify';
+import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler';
 
 const jetbrainsMono = JetBrains_Mono({
     subsets: ['latin'],
@@ -23,16 +24,16 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        
         <html lang="en" suppressHydrationWarning className={` ${jetbrainsMono.variable} antialiased font-mono`}>
-            <body >
+            <body>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
                     {/* Navbar */}
-                    <Navbar/>
+                    <Navbar />
                     {children}
-                    <Footer/>
-                            <ToastContainer/>
+                    <Footer />
+                    <ToastContainer />
                     {/* Footer */}
+                    <AnimatedThemeToggler/>
                 </ThemeProvider>
             </body>
         </html>
